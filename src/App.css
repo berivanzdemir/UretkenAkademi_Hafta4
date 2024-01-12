@@ -5,12 +5,12 @@
   box-sizing: border-box;
 }
 body{
-background-color: #ffffff;
+background-color:pink;
 font-family: "Poppins", sans-serif;
 
 }
 .background{
-  background-color: #f6f9fc;
+  background-color:pink;
   padding: 50px 0;
 }
 .container{
@@ -20,7 +20,11 @@ margin: auto;
 .d_flex{
   display: flex;
   justify-content:space-between;
-  align-items: center;
+}
+.c_flex{
+display: flex;
+justify-content: space-between;
+align-items: center;
 }
 .f_flex{
   display: flex;

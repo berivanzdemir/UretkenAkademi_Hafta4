@@ -1,6 +1,12 @@
 import React from "react";
-import logo2 from "../common/assets/logo2.png"
+import logo2 from "../common/assets/logo2.png";
+import { Link } from "react-router-dom";
+
 function Search() {
+  window.addEventListener("scroll", function () {
+    const search = document.querySelector(".search");
+    search.classList.toggle("active".window.scrollY > 100);
+  });
   return (
     <>
       <section className="search">
@@ -11,11 +17,17 @@ function Search() {
           <div className="search-box f_flex">
             <i className="fa fa-search"></i>
             <input type="text" placeholder="Search and hit enter..." />
-          <span>All Categories</span>
+            <span>All Categories</span>
           </div>
-
-
-
+          <div className="icon f_flex width">
+            <i className=" fa fa-user icon-circle"></i>
+            <div className="cart">
+              <Link to="/cart">
+                <i className="fa fa-shopping-bag icon-circle"></i>
+                <span>0</span>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </>

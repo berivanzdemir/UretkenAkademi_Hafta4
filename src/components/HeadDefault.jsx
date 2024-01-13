@@ -1,31 +1,30 @@
-import React from "react";
-import "./Header.css"
+import React from 'react'
 
-function HeadDefault() {
-  const Head = () => {};
-
+const HeadDefault = () => {
   return (
-    <div>
-      <section className="head">
-        <div className="container f_flex">
-          <div className="left row"></div>
-          <i className="fa fa-phone"></i>
-          <label>+88012 3457 7894</label>
-          <i className="fa fa-envelope"></i>
-          <label> example@gmail.com</label>
-        </div>
-        <div>
-          <div className="right row RText"></div>
-          <label>Theme FAQ'S</label>
-          <label>Need Helps</label>
-          <span>🇹🇷</span>
-          <label htmlFor="">TR</label>
-          <span>🇺🇸</span>
-          <label htmlFor="">USD</label>
-        </div>
-      </section>
-    </div>
-  );
+   <>
+    <section className="head">
+         <div className="container d_flex">
+          <div className="left row">
+           <i className="fa fa-phone"> </i>
+           <label>+90 544 743 28 30</label>
+           <i className='fa fa-envelope'></i>
+           <label>oberivan41@gmail.com</label>
+          </div>
+          <div className='right row RText'>
+            <label>Theme FAQ's</label>
+            <label>Need Helps</label>
+            <span>🇹🇷</span>
+            <label htmlFor=''>TR</label>
+            <span>🇹🇷</span>
+            <label htmlFor=''>TR</label>
+           
+          </div>
+         </div>
+    </section>
+   </>
+  )
 }
+
 
 export default HeadDefault;

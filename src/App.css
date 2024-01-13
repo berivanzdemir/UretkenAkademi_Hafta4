@@ -5,44 +5,74 @@
   box-sizing: border-box;
 }
 body{
-background-color:pink;
-font-family: "Poppins", sans-serif;
-
+  background-color: #fff;
+  font-family: 'Kanit', sans-serif;
 }
+
 .background{
-  background-color:pink;
+  background-color: #f6f9fc;
   padding: 50px 0;
 }
+
 .container{
-max-width: 90%;
-margin: auto;
+  max-width: 90%;
+  margin: auto;
 }
+
 .d_flex{
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
 }
+
 .c_flex{
-display: flex;
-justify-content: space-between;
-align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
 }
+
 .f_flex{
   display: flex;
 }
+
 a{
   text-decoration: none;
-  color:#0000;
+  color:#000;
 }
+
 li{
   list-style: none;
 }
 .uppercase{
   text-transform: uppercase;
+ 
 }
 .capitalize{
   text-transform: capitalize;
 }
+
 .RText{
   text-align: right;
 }
+input,button{
+  border: none;
+  outline: none;
+  background-color: none;
+}
+.row{ 
+  width: 50%;
+}
+.icon-circle{
+  width: 50%;
+  height: 50px;
+  line-height: 5px;
+  background-color: #f3f5f9;
+  margin-left: 20px;
+  text-align: center;
+  border-radius: 50%;
+}
+.boxShadow{
+  box-shadow: rgb(43 52 69 /10%) 0 4px 16px ;
+}
+
+
 

@@ -2,7 +2,7 @@ import React from "react";
 import Search from "./Search";
 import Navbar from "./Navbar";
 import "./Header.css"
-import HeadDefault from "../components/HeadDefault";
+import HeadDefault from "./HeadDefault";
 function Header() {
   return (
     <>

@@ -1,49 +1,58 @@
-import React , {useState} from 'react'
-import {Link} from "react-router-dom"
-const Navbar = () => {
-  const [MobileMenu,setMobileMenu]=useState(false)
-  return (
-    <>
-    <header className='header'>
-       <div className='container d_flex'>
-        <div className='categories d_flex'>
-           <span className='fa-solid fa-border-all'></span>
-           <h4>Categories
-            <i className='fa fa-chevron-down'></i>
-           </h4>
-        </div>
-           <div className="navlink">
-            <ul className={MobileMenu?'nav-links-mobile':'link f_flex c capitalize'} onClick={()=>setMobileMenu(false)}>
-                  <li>
-                    <Link to="/">Home</Link>
-                  </li>
-                  <li>
-                    <Link to="/pages">Pages</Link>
-                  </li>
-                  <li>
-                    <Link to="/user">User Account</Link>
-                  </li>
-                  <li>
-                    <Link to="/vendor">Vendor Account</Link>
-                  </li>
-                  <li>
-                    <Link to="/track">Track My Order</Link>
-                  </li>
-                  <li>
-                    <Link to="/contact">Contact</Link>
-                  </li>
-            </ul>
+import React, { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { SiteContext } from "../Context/SiteContext";
+import ThemeIcon from "./ThemeIcon";
 
-            <button className='toggle' onClick={()=>setMobileMenu(!MobileMenu)}>
-                {MobileMenu?<i className='fas fa-times close home-bth'></i>:
-               <i className="fa-sharp fa-regular fa-bars open"></i>}
-   
-            </button>
-           </div>
-       </div>
-    </header>
-    </>
-  )
+function Navbar() {
+  const {user,handleLogOut}=useContext(SiteContext)
+  return (
+    <nav
+      className="navbar navbar-expand-lg bg-body-tertiary"
+      data-bs-theme="dark"
+    >
+      <div className="container">
+      <Link className="navbar-brand" to="/">R-Store</Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ms-auto">
+            <NavLink className="nav-link" to="/">
+              Home
+            </NavLink>
+            <NavLink className="nav-link" to="/Products">
+              Products
+            </NavLink>
+            <NavLink className="nav-link" to="/about">
+              About
+            </NavLink>
+            <NavLink className="nav-link" to="/contact">
+              Contact
+            </NavLink>
+            {
+              user?
+              <>
+              <NavLink className="nav-link" to="/fav">Favorites</NavLink>
+              <button className="nav-link" onClick={handleLogOut}>Logout ({user.name})</button>
+              </>:
+              <NavLink className="nav-link" to="/login">
+              Login
+            </NavLink>
+            }
+            <div className="ms-auto"><ThemeIcon/></div>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
 }
 
-export default Navbar
+export default Navbar;

@@ -1,24 +1,20 @@
-
-import "./App.css";
-import Header from "./components/Header";
-import {
-  BrowserRouter as Router,
-  Switch,Route
-
-} from "react-router-dom";
-
+import { useContext, useEffect, useState } from "react";
+import Navbar from "./Components/Navbar";
+import SiteRoutes from "./SiteRoutes";
+import { SiteContext } from "./Context/SiteContext";
 
 function App() {
+const {user,handleLogin,handleLogOut}=useContext(SiteContext)
+
   return (
     <>
-      <Router>
-        <Header />
-        <Switch>
-         {/* <Route path="/" exact >
-            <About />
-          </Route> */} 
-        </Switch>
-      </Router>
+      
+      <Navbar />
+      <div className="container">
+        <div className="col-sm-12">
+          <SiteRoutes />
+        </div>
+      </div>
     </>
   );
 }
